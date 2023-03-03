@@ -1,7 +1,14 @@
-const Logo = () => {
+import { forwardRef } from "react";
+
+const Logo = forwardRef((props, logoRef) => {
     return (
-        <div className="section">Logo</div>
+        <div
+            ref={logoRef}
+            id="logo"
+            className="section">
+            Logo
+        </div>
     );
-};
+});
 
 export default Logo;

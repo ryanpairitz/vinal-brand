@@ -13,12 +13,63 @@ export const StyledHeader = styled.nav`
     };
     font-size: 1rem;
 
+    .nav-item {
+        position: relative;
+        margin-left: 1.3333rem;
+        padding: calc(17rem / 22.95) 0rem;
+    }
+
+    .nav-item:first-of-type {
+        margin: 0;
+        color: var(--blkswn-rose);
+    }
+
+    .nav-item:first-child {
+        margin-left: 1.3333rem;
+    }
+
+    .nav-link {
+        color: var(--white);
+        opacity: 0.75;
+        font-weight: 500;
+    }
+
+    .active-link, .nav-link:hover {
+        opacity: 1;
+    }
+
+    .nav-dropdown {
+        position: absolute;
+        z-index: 999;
+        display: flex;
+        column-gap: 1.3333rem;
+        padding: calc(17rem / 22.95) 0;
+        left: 50%;
+        transform: translateX(-50%); // center horizontally
+    }
+
+    .nav-dropdown-last {
+        transform: revert;
+        justify-content: flex-end;
+        left: auto;
+        right: 0;
+    }
+
+    .nav-dropdown-first {
+        transform: revert;
+        justify-content: flex-start;
+        left: 0;
+    }
+
+    .nav-dropdown-link {
+        padding: 0;
+    }
+
     > * {
         &:first-child {
             display: flex;
             align-items: center;
             margin-left: calc(55rem * 0.9 / 22.95);
-            color: var(--blkswn-rose);
             > * {
                 &:first-child {
                     // need this to ensure logo is centered vertically
@@ -26,7 +77,6 @@ export const StyledHeader = styled.nav`
                     min-width: 168.1396px;
                     margin-right: calc(34rem * 0.9 / 22.95);
                 }
-                text-align: left;
             }
         }
         &:last-child {

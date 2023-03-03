@@ -1,7 +1,14 @@
-const Voice = () => {
+import { forwardRef } from "react";
+
+const Voice = forwardRef((props, voiceRef) => {
     return (
-        <div className="section">Voice</div>
+        <div
+            ref={voiceRef}
+            id="voice"
+            className="section">
+            Voice
+        </div>
     );
-};
+});
 
 export default Voice;

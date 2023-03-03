@@ -33,21 +33,14 @@ a {
   letter-spacing: calc(-49.5/1000 * 1rem);
 }
 
+a:visited {
+  color: inherit;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.nav-link {
-  color: white;
-  opacity: .75;
-  font-weight: 500;
-  margin-left: 1.3333rem;
-}
-
-.active-link {
-  opacity: 1;
 }
 
 .section {

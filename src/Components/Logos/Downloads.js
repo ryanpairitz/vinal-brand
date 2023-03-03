@@ -1,7 +1,14 @@
-const Downloads = () => {
+import { forwardRef } from "react";
+
+const Downloads = forwardRef((props, downloadsRef) => {
     return (
-        <div className="section">Downloads</div>
+        <div
+            ref={downloadsRef}
+            id="downloads"
+            className="section">
+            Downloads
+        </div>
     );
-};
+});
 
 export default Downloads;

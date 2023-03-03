@@ -1,7 +1,14 @@
-const Expressive = () => {
+import { forwardRef } from "react";
+
+const Expressive = forwardRef((props, expressiveRef) => {
     return (
-        <div className="section">Expressive</div>
+        <div
+            ref={expressiveRef}
+            id="expressive"
+            className="section">
+            Expressive
+        </div>
     );
-};
+});
 
 export default Expressive;

@@ -1,7 +1,14 @@
-const Fallbacks = () => {
+import { forwardRef } from "react";
+
+const Fallbacks = forwardRef((props, fallbacksRef) => {
     return (
-        <div className="section">Fallbacks</div>
+        <div
+            ref={fallbacksRef}
+            id="fallbacks"
+            className="section">
+            Fallbacks
+        </div>
     );
-};
+});
 
 export default Fallbacks;

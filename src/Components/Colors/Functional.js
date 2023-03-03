@@ -1,7 +1,14 @@
-const Functional = () => {
+import { forwardRef } from "react";
+
+const Functional = forwardRef((props, functionalRef) => {
     return (
-        <div className="section">Functional</div>
+        <div
+            ref={functionalRef}
+            id="functional"
+            className="section">
+            Functional
+        </div>
     );
-};
+});
 
 export default Functional;

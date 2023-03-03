@@ -1,7 +1,14 @@
-const Futura = () => {
+import { forwardRef } from "react";
+
+const Futura = forwardRef((props, futuraRef) => {
     return (
-        <div className="section">Futura</div>
+        <div
+            ref={futuraRef}
+            id="futura"
+            className="section">
+            Futura
+        </div>
     );
-};
+});
 
 export default Futura;

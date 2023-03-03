@@ -1,7 +1,14 @@
-const Brandmark = () => {
+import { forwardRef } from "react";
+
+const Brandmark = forwardRef((props, brandmarkRef) => {
     return (
-        <div className="section">Brandmark</div>
+        <div
+            ref={brandmarkRef}
+            id="brandmark"
+            className="section">
+            Brandmark
+        </div>
     );
-};
+});
 
 export default Brandmark;
