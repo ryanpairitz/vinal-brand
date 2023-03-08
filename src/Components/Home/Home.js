@@ -4,15 +4,13 @@ import Philosophy from "./Philosophy";
 import Theory from "./Theory";
 import Voice from "./Voice";
 
-const Home = forwardRef((props, homeRef) => {
-    const {philosophyRef, theoryRef, voiceRef} = homeRef.current;
-
+const Home = forwardRef((props, sectionRefs) => {
     return (
         <div>
             <Hero />
-            <Philosophy ref={philosophyRef}/>
-            <Theory ref={theoryRef}/>
-            <Voice ref={voiceRef}/>
+            <Philosophy ref={(element) => sectionRefs.current['philosophy'] = element}/>
+            <Theory ref={(element) => sectionRefs.current['theory'] = element}/>
+            <Voice ref={(element) => sectionRefs.current['voice'] = element}/>
         </div>
     );
 })

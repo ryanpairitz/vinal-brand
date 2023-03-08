@@ -8,14 +8,12 @@ const Header = ({ location }) => {
     const activeLinkClass = "nav-link active-link";
     const inactiveLinkClass = "nav-link";
     const dropdownLinkClass = "nav-link nav-dropdown-link";
-    const initDropdowns = {
-        dropdownHome: false,
-        dropdownLogos: false,
-        dropdownColors: false,
-        dropdownTypography: false
-    }
 
-    const [dropdowns, setDropdowns] = useState(initDropdowns);
+    const [dropdownHome, setDropdownHome] = useState(false);
+    const [dropdownLogos, setDropdownLogos] = useState(false);
+    const [dropdownColors, setDropdownColors] = useState(false);
+    const [dropdownTypography, setDropdownTypography] = useState(false);
+
     // TODO: add useEffect with event listener to detect if the user scrolls
     // TODO: add function to animate the header once scrolled
 
@@ -28,14 +26,15 @@ const Header = ({ location }) => {
                     <Logo width={168.1396} />
                 </NavLink>
                 <span
-                    onMouseEnter={() => setDropdowns({ ...dropdowns, dropdownHome: !dropdowns.dropdownHome })}
-                    onMouseLeave={() => setDropdowns({ ...dropdowns, dropdownHome: false })}
-                    className="nav-item">
+                    onMouseEnter={() => setDropdownHome(!dropdownHome)}
+                    onMouseLeave={() => setDropdownHome(false)}
+                    className="nav-item"
+                    id="dropdownHome">
                     <NavLink to="/">
                         brand guide
                     </NavLink>
                     {/* when associated dropdown is true, show dropdown */}
-                    {dropdowns.dropdownHome &&
+                    {dropdownHome &&
                         <ul className="nav-dropdown nav-dropdown-first">
                             {DropdownItems.map((item, index) => {
                                 if (item.path.substring(0, item.path.indexOf('#')) === "/") {
@@ -49,7 +48,7 @@ const Header = ({ location }) => {
                                             </NavLink>
                                         </li>
                                     )
-                                }
+                                } else return null;
                             })}
                         </ul>
                     }
@@ -57,9 +56,10 @@ const Header = ({ location }) => {
             </span>
             <div>
                 <span
-                    onMouseEnter={() => setDropdowns({ ...dropdowns, dropdownLogos: !dropdowns.dropdownLogos })}
-                    onMouseLeave={() => setDropdowns({ ...dropdowns, dropdownLogos: false })}
-                    className="nav-item">
+                    onMouseEnter={() => setDropdownLogos(!dropdownLogos)}
+                    onMouseLeave={() => setDropdownLogos(false)}
+                    className="nav-item"
+                    id="dropdownLogos">
                     <NavLink
                         to="logos"
                         className={({ isActive }) =>
@@ -68,7 +68,7 @@ const Header = ({ location }) => {
                         logos
                     </NavLink>
                     {/* when associated dropdown is true, show dropdown */}
-                    {dropdowns.dropdownLogos &&
+                    {dropdownLogos &&
                         <ul className="nav-dropdown">
                             {DropdownItems.map((item, index) => {
                                 if (item.path.substring(0, item.path.indexOf('#')) === "/logos") {
@@ -82,15 +82,16 @@ const Header = ({ location }) => {
                                             </NavLink>
                                         </li>
                                     )
-                                }
+                                } else return null;
                             })}
                         </ul>
                     }
                 </span>
                 <span
-                    onMouseEnter={() => setDropdowns({ ...dropdowns, dropdownColors: !dropdowns.dropdownColors })}
-                    onMouseLeave={() => setDropdowns({ ...dropdowns, dropdownColors: false })}
-                    className="nav-item">
+                    onMouseEnter={() => setDropdownColors(!dropdownColors)}
+                    onMouseLeave={() => setDropdownColors(false)}
+                    className="nav-item"
+                    id="dropdownColors">
                     <NavLink
                         to="colors"
                         className={({ isActive }) =>
@@ -99,7 +100,7 @@ const Header = ({ location }) => {
                         colors
                     </NavLink>
                     {/* when associated dropdown is true, show dropdown */}
-                    {dropdowns.dropdownColors &&
+                    {dropdownColors &&
                         <ul className="nav-dropdown">
                             {DropdownItems.map((item, index) => {
                                 if (item.path.substring(0, item.path.indexOf('#')) === "/colors") {
@@ -113,15 +114,16 @@ const Header = ({ location }) => {
                                             </NavLink>
                                         </li>
                                     )
-                                }
+                                } else return null;
                             })}
                         </ul>
                     }
                 </span>
                 <span
-                    onMouseEnter={() => setDropdowns({ ...dropdowns, dropdownTypography: !dropdowns.dropdownTypography })}
-                    onMouseLeave={() => setDropdowns({ ...dropdowns, dropdownTypography: false })}
-                    className="nav-item">
+                    onMouseEnter={() => setDropdownTypography(!dropdownTypography)}
+                    onMouseLeave={() => setDropdownTypography(false)}
+                    className="nav-item"
+                    id="dropdownTypography">
                     <NavLink
                         to="typography"
                         className={({ isActive }) =>
@@ -130,7 +132,7 @@ const Header = ({ location }) => {
                         typography
                     </NavLink>
                     {/* when associated dropdown is true, show dropdown */}
-                    {dropdowns.dropdownTypography &&
+                    {dropdownTypography &&
                         <ul className="nav-dropdown nav-dropdown-last">
                             {DropdownItems.map((item, index) => {
                                 if (item.path.substring(0, item.path.indexOf('#')) === "/typography") {
@@ -144,7 +146,7 @@ const Header = ({ location }) => {
                                             </NavLink>
                                         </li>
                                     )
-                                }
+                                } else return null;
                             })}
                         </ul>
                     }

@@ -3,14 +3,12 @@ import Functional from "./Functional";
 import Expressive from "./Expressive";
 import { forwardRef } from "react";
 
-const Colors = forwardRef((props, colorsRef) => {
-    const {functionalRef, expressiveRef} = colorsRef.current;
-
+const Colors = forwardRef((props, sectionRefs) => {
     return (
         <div>
             <ColorsCover />
-            <Functional ref={functionalRef}/>
-            <Expressive ref={expressiveRef}/>
+            <Functional ref={(element) => sectionRefs.current['functional'] = element}/>
+            <Expressive ref={(element) => sectionRefs.current['expressive'] = element}/>
         </div>
     );
 });

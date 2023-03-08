@@ -4,15 +4,13 @@ import Downloads from "./Downloads";
 import Logo from "./Logo";
 import LogosCover from "./LogosCover";
 
-const Logos = forwardRef((props, logosRef) => {
-    const {logoRef, brandmarkRef, downloadsRef} = logosRef.current;
-
+const Logos = forwardRef((props, sectionRefs) => {
     return (
         <div>
             <LogosCover />
-            <Logo ref={logoRef}/>
-            <Brandmark ref={brandmarkRef}/>
-            <Downloads ref={downloadsRef}/>
+            <Logo ref={(element) => sectionRefs.current['logo'] = element}/>
+            <Brandmark ref={(element) => sectionRefs.current['brandmark'] = element}/>
+            <Downloads ref={(element) => sectionRefs.current['downloads'] = element}/>
         </div>
     );
 })

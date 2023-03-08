@@ -9,9 +9,10 @@ export const StyledHeader = styled.nav`
     align-items: center;
     background-color: ${
         ({pathname}) =>
-            (pathname == '/') ? `var(--deep-depression-cherry)` : `var(--black-carbon)`
+            (pathname === '/') ? `var(--deep-depression-cherry)` : `var(--black-carbon)`
     };
     font-size: 1rem;
+    text-align: left;
 
     .nav-item {
         position: relative;

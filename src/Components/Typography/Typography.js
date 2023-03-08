@@ -4,15 +4,13 @@ import Fallbacks from "./Fallbacks";
 import Futura from "./Futura";
 import TypographyCover from "./TypographyCover";
 
-const Typography = forwardRef((props, typographyRef) => {
-    const {futuraRef, arboriaRef, fallbacksRef} = typographyRef.current;
-
+const Typography = forwardRef((props, sectionRefs) => {
     return (
         <div>
             <TypographyCover />
-            <Futura ref={futuraRef}/>
-            <Arboria ref={arboriaRef}/>
-            <Fallbacks ref={fallbacksRef}/>
+            <Futura ref={(element) => sectionRefs.current['futura'] = element}/>
+            <Arboria ref={(element) => sectionRefs.current['arboria'] = element}/>
+            <Fallbacks ref={(element) => sectionRefs.current['fallbacks'] = element}/>
         </div>
     );
 })
