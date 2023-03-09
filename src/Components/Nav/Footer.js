@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import { RelativePaths } from "./RelativePaths";
 import { ReactComponent as Logo } from "./vinal-logo-web.svg";
+import "./Footer.css";
 
 const Footer = ({ location }) => {
     const curr = RelativePaths.find(current => current.pathname === location.pathname);

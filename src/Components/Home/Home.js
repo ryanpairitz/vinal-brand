@@ -6,7 +6,7 @@ import Voice from "./Voice";
 
 const Home = forwardRef((props, sectionRefs) => {
     return (
-        <div>
+        <div className="cover">
             <Hero />
             <Philosophy ref={(element) => sectionRefs.current['philosophy'] = element}/>
             <Theory ref={(element) => sectionRefs.current['theory'] = element}/>

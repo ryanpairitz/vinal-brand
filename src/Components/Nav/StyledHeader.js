@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.nav`
     position: fixed;
+    z-index: 999;
     width: 100%;
     height: 166.5px;
     display: flex;

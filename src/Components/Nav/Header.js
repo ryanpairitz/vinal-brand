@@ -42,7 +42,6 @@ const Header = ({ location }) => {
                                         <li key={index}>
                                             <NavLink
                                                 to={item.path}
-                                                id={item.id}
                                                 className={dropdownLinkClass}>
                                                 {item.id}
                                             </NavLink>
