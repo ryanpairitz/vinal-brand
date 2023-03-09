@@ -24,30 +24,3 @@ html, body {
     sans-serif;
   font-size: 22.95px;
 }
-
-a {
-  text-decoration: none;
-  font-family: 'Futura', 'Arial',
-    sans-serif;
-  font-weight: 600;
-  letter-spacing: calc(-49.5/1000 * 1rem);
-}
-
-a:visited {
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-left: calc(172px * 0.9);
-  padding-right: calc(172px * 0.9);
-  font-size: calc(34rem / 22.95);
-}

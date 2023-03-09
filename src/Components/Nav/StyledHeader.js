@@ -12,7 +12,6 @@ export const StyledHeader = styled.nav`
             (pathname === '/') ? `var(--deep-depression-cherry)` : `var(--black-carbon)`
     };
     font-size: 1rem;
-    text-align: left;
 
     .nav-item {
         position: relative;
@@ -22,11 +21,15 @@ export const StyledHeader = styled.nav`
 
     .nav-item:first-of-type {
         margin: 0;
-        color: var(--blkswn-rose);
     }
 
     .nav-item:first-child {
         margin-left: 1.3333rem;
+    }
+
+    .nav-title {
+        color: var(--blkswn-rose);
+        font-weight: 600;
     }
 
     .nav-link {
@@ -73,9 +76,7 @@ export const StyledHeader = styled.nav`
             margin-left: calc(55rem * 0.9 / 22.95);
             > * {
                 &:first-child {
-                    // need this to ensure logo is centered vertically
-                    line-height: 0;
-                    min-width: 168.1396px;
+                    min-width: calc(168.1396rem / 22.95);
                     margin-right: calc(34rem * 0.9 / 22.95);
                 }
             }

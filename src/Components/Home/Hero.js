@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-        <div className="section">our brand</div>
+        <div className="section hero">our brand</div>
     );
 };
 

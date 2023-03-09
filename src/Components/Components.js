@@ -4,8 +4,8 @@ import {
     useLocation
 } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
+import Header from "./Nav/Header";
+import Footer from "./Nav/Footer";
 import NotFound from "./NotFound";
 import Home from "./Home/Home";
 import Philosophy from "./Home/Philosophy";
@@ -59,7 +59,7 @@ const Components = () => {
                     <Route path="#fallbacks" element={<Fallbacks />}/>
                 <Route path="*" element={<NotFound />}/>
             </Routes>
-            <Footer />
+            <Footer location={location} />
         </div>
     );
 }

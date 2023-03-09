@@ -23,14 +23,14 @@ const Header = ({ location }) => {
         <StyledHeader pathname={location.pathname}>
             <span>
                 <NavLink to="/">
-                    <Logo width={168.1396} />
+                    <Logo width={168.1396} style={{display: "block"}} />
                 </NavLink>
                 <span
                     onMouseEnter={() => setDropdownHome(!dropdownHome)}
                     onMouseLeave={() => setDropdownHome(false)}
                     className="nav-item"
                     id="dropdownHome">
-                    <NavLink to="/">
+                    <NavLink to="/" className="nav-title">
                         brand guide
                     </NavLink>
                     {/* when associated dropdown is true, show dropdown */}
