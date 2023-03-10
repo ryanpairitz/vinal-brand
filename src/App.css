@@ -64,10 +64,6 @@ h2 {
   margin-bottom: calc(55em / 66.75);
 }
 
-h2:first-child {
-  margin-bottom: calc(21em / 66.75);
-}
-
 h2:last-child {
   margin-bottom: 0;
 }
@@ -79,7 +75,7 @@ h3 {
   font-weight: 500;
   font-size: 0.382em;
   line-height: 1em;
-  letter-spacing: calc(5.94em / 108);
+  letter-spacing: calc(5.94rem / 25.5);
   text-transform: lowercase;
   margin: 0;
   margin-bottom: calc(21em / 108);
@@ -94,7 +90,7 @@ p {
 }
 
 .hero > * > p {
-  font-size: calc(25.5em / 108);
+  font-size: 1rem;
   margin-bottom: 1em;
 }
 
@@ -122,7 +118,7 @@ p:last-child {
   width: 85%;
 }
 
-.cover > * > * > h3 {
+.section-title {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   text-align: right;
@@ -131,10 +127,36 @@ p:last-child {
   margin-left: 0;
 }
 
+.divider {
+  width: 100%;
+  padding: calc(34rem / 25.5) 0;
+  margin-bottom: calc(55rem / 25.5);
+  border-top: 1.71px solid var(--aluminum);
+  border-bottom: 1.71px solid var(--aluminum);
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: calc(34rem / 25.5);
+}
+
+.card {
+  flex: 1 1 0;
+  padding: calc(34rem / 25.5);
+  padding-bottom: calc(89rem / 25.5);
+  border: 1.71px solid var(--aluminum);
+  border-radius: calc(44.5rem / 25.5);
+}
+
 #philosophy {
   background: linear-gradient(var(--deep-depression-cherry), #211115);
 }
 
 #theory {
   background: linear-gradient(#211115, var(--black-carbon), var(--black-carbon));
+}
+
+#voice {
+  display: block;
 }
