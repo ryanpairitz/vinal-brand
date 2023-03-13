@@ -7,9 +7,9 @@ const Philosophy = forwardRef((props, philosophyRef) => {
             ref={philosophyRef}
             id="philosophy"
             className="section">
-            <div className="container content">
+            <div className="container">
                 <SectionTitle>Philosophy</SectionTitle>
-                <div>
+                <div className="content">
                     <h2 className="emphasized">Music is who you are.</h2>
                     <p>
                         That&rsquo;s why some albums resonate with you so much that you may feel inclined to own them in the classic format of vinyl records, even if only to have the album art displayed on your shelves or on your wall. 

@@ -16,34 +16,6 @@ ul {
   padding: 0;
 }
 
-.section {
-  display: flex;
-  align-items: center;
-  padding-left: calc(172px * 0.9);
-  padding-right: calc(172px * 0.9);
-}
-
-.section:first-child {
-  min-height: 100vh;
-}
-
-.container {
-  margin: calc(144rem / 25.5) 0;
-  font-size: calc(108rem / 25.5);
-}
-
-.hero {
-  background-color: var(--deep-depression-cherry);
-}
-
-.hero > div {
-  width: 50%;
-}
-
-.hero > .container {
-  width: 38.2%;
-}
-
 h1 {
   font-family: 'Futura', 'Arial',
     sans-serif;
@@ -108,14 +80,48 @@ p:last-child {
   font-weight: 600;
 }
 
-.cover > * > .content {
+.section {
+  padding-left: calc(172px * 0.9);
+  padding-right: calc(172px * 0.9);
+  font-size: calc(108rem / 25.5);
+}
+
+.section:first-child {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero {
+  background-color: var(--deep-depression-cherry);
+}
+
+.hero > div {
+  width: 50%;
+}
+
+.hero > .column {
+  width: 38.2%;
+  padding: calc(144rem / 25.5) 0;
+}
+
+.container {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: calc(144rem / 25.5) 0 0;
 }
 
-.cover > * > .content > div {
+.cover > * > .container > .content {
   width: 85%;
+}
+
+.section:last-child > .container:last-child {
+  padding-bottom: calc(144rem / 25.5);
+}
+
+.sub {
+  display: block;
 }
 
 .section-title {
@@ -155,8 +161,4 @@ p:last-child {
 
 #theory {
   background: linear-gradient(#211115, var(--black-carbon), var(--black-carbon));
-}
-
-#voice {
-  display: block;
 }

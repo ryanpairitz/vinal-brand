@@ -9,9 +9,9 @@ const Voice = forwardRef((props, voiceRef) => {
             ref={voiceRef}
             id="voice"
             className="section">
-            <div className="container content">
+            <div className="container">
                 <SectionTitle>Voice</SectionTitle>
-                <div>
+                <div className="content">
                     <h2>
                         We&rsquo;re demonstrating how users can express themselves through Vinal and shining the spotlight on them.
                     </h2>
@@ -26,7 +26,7 @@ const Voice = forwardRef((props, voiceRef) => {
                     </p>
                 </div>
             </div>
-            <div className="container">
+            <div className="container sub">
                 <SectionDivider>
                     Functional vs. Expressive
                 </SectionDivider>

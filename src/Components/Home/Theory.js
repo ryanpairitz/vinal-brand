@@ -7,9 +7,9 @@ const Theory = forwardRef((props, theoryRef) => {
             ref={theoryRef}
             id="theory"
             className="section">
-            <div className="container content">
+            <div className="container">
                 <SectionTitle>Theory</SectionTitle>
-                <div>
+                <div className="content">
                     <h2>
                         Therefore, we need every element of the Vinal brand to remain in line with our philosophy.
                     </h2>
