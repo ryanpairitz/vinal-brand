@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import SectionDivider from "../SectionDivider";
 
 const Expressive = forwardRef((props, expressiveRef) => {
     return (
@@ -6,7 +7,13 @@ const Expressive = forwardRef((props, expressiveRef) => {
             ref={expressiveRef}
             id="expressive"
             className="section">
-            Expressive
+            <div className="container sub">
+                <SectionDivider>
+                    Expressive
+                </SectionDivider>
+                <div>
+                </div>
+            </div>
         </div>
     );
 });

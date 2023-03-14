@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import SectionDivider from "../SectionDivider";
 
 const Brandmark = forwardRef((props, brandmarkRef) => {
     return (
@@ -6,7 +7,13 @@ const Brandmark = forwardRef((props, brandmarkRef) => {
             ref={brandmarkRef}
             id="brandmark"
             className="section">
-            Brandmark
+            <div className="container sub">
+                <SectionDivider>
+                    Brandmark
+                </SectionDivider>
+                <div>
+                </div>
+            </div>
         </div>
     );
 });

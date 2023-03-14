@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import SectionTitle from "./SectionTitle";
+import Title from "../Title";
 
 const Theory = forwardRef((props, theoryRef) => {
     return (
@@ -8,7 +8,7 @@ const Theory = forwardRef((props, theoryRef) => {
             id="theory"
             className="section">
             <div className="container">
-                <SectionTitle>Theory</SectionTitle>
+                <Title>Theory</Title>
                 <div className="content">
                     <h2>
                         Therefore, we need every element of the Vinal brand to remain in line with our philosophy.

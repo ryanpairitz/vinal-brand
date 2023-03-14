@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import Card from "../Card";
 import SectionDivider from "../SectionDivider";
-import SectionTitle from "./SectionTitle";
+import Title from "../Title";
 
 const Voice = forwardRef((props, voiceRef) => {
     return (
@@ -10,7 +10,7 @@ const Voice = forwardRef((props, voiceRef) => {
             id="voice"
             className="section">
             <div className="container">
-                <SectionTitle>Voice</SectionTitle>
+                <Title>Voice</Title>
                 <div className="content">
                     <h2>
                         We&rsquo;re demonstrating how users can express themselves through Vinal and shining the spotlight on them.

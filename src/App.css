@@ -47,7 +47,6 @@ h3 {
   font-weight: 500;
   font-size: 0.382em;
   line-height: 1em;
-  letter-spacing: calc(5.94rem / 25.5);
   text-transform: lowercase;
   margin: 0;
   margin-bottom: calc(21em / 108);
@@ -112,8 +111,17 @@ p:last-child {
   padding: calc(144rem / 25.5) 0 0;
 }
 
-.cover > * > .container > .content {
+.content {
   width: 85%;
+}
+
+.group-cover {
+  padding-bottom: calc(144rem / 25.5);
+  align-items: baseline;
+}
+
+.group-cover > .content {
+  width: 80%;
 }
 
 .section:last-child > .container:last-child {
@@ -124,17 +132,27 @@ p:last-child {
   display: block;
 }
 
-.section-title {
+.sub > p:last-of-type {
+  margin-bottom: calc(55rem / 25.5);
+}
+
+.title {
+  margin: calc(21rem / 25.5) calc(55rem / 25.5) 0 0;
+}
+
+.cover > * > * > .title {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   text-align: right;
   transform: rotate(180deg);
+  letter-spacing: calc(5.94rem / 25.5);
   margin: calc(34rem / 25.5) calc(89rem / 25.5);
   margin-left: 0;
 }
 
 .divider {
   width: 100%;
+  letter-spacing: calc(5.94rem / 25.5);
   padding: calc(34rem / 25.5) 0;
   margin-bottom: calc(55rem / 25.5);
   border-top: 1.71px solid var(--aluminum);

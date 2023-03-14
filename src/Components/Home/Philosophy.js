@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import SectionTitle from "./SectionTitle";
+import Title from "../Title";
 
 const Philosophy = forwardRef((props, philosophyRef) => {
     return (
@@ -8,7 +8,7 @@ const Philosophy = forwardRef((props, philosophyRef) => {
             id="philosophy"
             className="section">
             <div className="container">
-                <SectionTitle>Philosophy</SectionTitle>
+                <Title>Philosophy</Title>
                 <div className="content">
                     <h2 className="emphasized">Music is who you are.</h2>
                     <p>

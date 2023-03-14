@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import SectionDivider from "../SectionDivider";
 
 const Functional = forwardRef((props, functionalRef) => {
     return (
@@ -6,7 +7,13 @@ const Functional = forwardRef((props, functionalRef) => {
             ref={functionalRef}
             id="functional"
             className="section">
-            Functional
+            <div className="container sub">
+                <SectionDivider>
+                    Functional
+                </SectionDivider>
+                <div>
+                </div>
+            </div>
         </div>
     );
 });
