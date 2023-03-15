@@ -11,19 +11,21 @@ const ColorCard = ({ color }) => {
             style={{
                 backgroundColor: color.hex
             }}>
-            <h3 className="condensed"
-                style={{
-                    color: fontColor,
-                    marginBottom: 0
-                }}>
-                {color.title}
-            </h3>
-            <p
-                style={{
-                    color: fontColor
-                }}>
-                {color.hex}
-            </p>
+            <div>
+                <h3 className="condensed"
+                    style={{
+                        color: fontColor,
+                        marginBottom: 0
+                    }}>
+                    {color.title}
+                </h3>
+                <p
+                    style={{
+                        color: fontColor
+                    }}>
+                    {color.hex}
+                </p>
+            </div>
             {hovering &&
                 <p
                     className="light"
@@ -34,6 +36,7 @@ const ColorCard = ({ color }) => {
                     {color.description}
                 </p>
             }
+            <div/>
         </div>
     );
 };

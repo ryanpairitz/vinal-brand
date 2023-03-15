@@ -187,9 +187,13 @@ p:last-child {
 }
 
 .color {
+  padding: calc(34rem / 25.5);
   border-radius: calc(22.5rem / 25.5);
-  height: calc(377rem / 25.5);
+  height: calc(309rem / 25.5);
   flex: 1 1 calc(20% - (4 * 34rem / 25.5) - (2 * 34rem / 25.5));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .color:first-of-type {
@@ -204,7 +208,7 @@ p:last-child {
   flex: 1 1 calc(50% - (34rem / 25.5) - (2 * 34rem / 25.5));
 }
 
-.color > p {
+.color > p, .color > * > p {
   font-size: 1rem;
 }
 
