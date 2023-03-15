@@ -52,6 +52,10 @@ h3 {
   margin-bottom: calc(21em / 108);
 }
 
+h3.condensed {
+  font-family: 'Futura-CondensedMedium';
+}
+
 p {
   color: var(--warm-neutral);
   font-size: calc(34em / 108);
@@ -71,6 +75,10 @@ p:last-of-type {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.light {
+  font-weight: 300;
 }
 
 .emphasized {
@@ -171,6 +179,33 @@ p:last-child {
   padding-bottom: calc(89rem / 25.5);
   border: 1.71px solid var(--aluminum);
   border-radius: calc(44.5rem / 25.5);
+}
+
+.color-container {
+  flex-wrap: wrap;
+  row-gap: calc(34rem / 25.5);
+}
+
+.color {
+  border-radius: calc(22.5rem / 25.5);
+  height: calc(377rem / 25.5);
+  flex: 1 1 calc(20% - (4 * 34rem / 25.5) - (2 * 34rem / 25.5));
+}
+
+.color:first-of-type {
+  flex: 0 1 calc(61.8% - (2 * 34rem / 25.5) - (2 * 34rem / 25.5));
+}
+
+.color:nth-of-type(2), .color:nth-of-type(3) {
+  flex: 1 0 calc(((38.2% - (2 * 34rem / 25.5)) / 2) - (2 * 34rem / 25.5));
+}
+
+.color:nth-of-type(4), .color:nth-of-type(5) {
+  flex: 1 1 calc(50% - (34rem / 25.5) - (2 * 34rem / 25.5));
+}
+
+.color > p {
+  font-size: 1rem;
 }
 
 #philosophy {
