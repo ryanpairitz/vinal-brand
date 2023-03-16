@@ -245,6 +245,20 @@ select, option {
   padding: 0 calc(34rem / 25.5);
   white-space: normal;
   -webkit-appearance: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+select::-ms-expand { 
+  display: none; 
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 25.4.3, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55 55' width='49.5' height='49.5' enable-background='new 0 0 55 55' xml:space='preserve'%3E%3Cpolyline id='hamburger-top_00000119117969351191531590000016386305308768717487_' fill='none' stroke='%23FFFFFF' stroke-width='1.8889' stroke-miterlimit='10' points=' 40.8,20.9 27.5,34.1 14.2,20.9 '/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right center; 
+  background-position: calc(100% - (21rem / 25.5)) center;
+  background-size: auto 61.8%;
 }
 
 textarea {
