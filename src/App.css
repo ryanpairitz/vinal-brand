@@ -212,6 +212,52 @@ p:last-child {
   font-size: 1rem;
 }
 
+.font-tester {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-container {
+  display: flex;
+  column-gap: calc(34rem / 25.5);
+  margin-bottom: calc(55rem / 25.5);
+}
+
+select, textarea {
+  background-color: var(--black-carbon);
+  color: var(--warm-neutral);
+  border: 1.71px solid var(--aluminum);
+  border-radius: calc(22.5rem / 25.5);
+  margin: 0;
+}
+
+select:focus, textarea:focus {
+  outline: none;
+}
+
+select, option {
+  flex: 1 1 calc(100% - ((3 * 34rem) / 25.5));
+  height: calc(89rem / 25.5);
+  font-family: 'Arboria', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: calc(42rem / 25.5);
+  text-transform: lowercase;
+  padding: 0 calc(34rem / 25.5);
+  white-space: normal;
+  -webkit-appearance: none;
+}
+
+textarea {
+  width: calc(100% - ((2 * 34rem) / 25.5));
+  padding: calc(21rem / 25.5) calc(34rem / 25.5);
+  resize: none;
+  height: auto;
+}
+
+textarea::placeholder {
+  color: var(--warm-neutral);
+}
+
 #philosophy {
   background: linear-gradient(var(--deep-depression-cherry), #211115);
 }
