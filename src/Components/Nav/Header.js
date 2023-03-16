@@ -141,7 +141,7 @@ const Header = ({ location }) => {
                                                 to={item.path}
                                                 id={item.id}
                                                 className={dropdownLinkClass}>
-                                                {item.id}
+                                                {item.id.replace('-', ' ')}
                                             </NavLink>
                                         </li>
                                     )

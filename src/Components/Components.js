@@ -22,6 +22,7 @@ import Typography from "./Typography/Typography";
 import Futura from "./Typography/Futura";
 import Arboria from "./Typography/Arboria";
 import Fallbacks from "./Typography/Fallbacks";
+import NewSpirit from "./Typography/NewSpirit";
 
 const Components = () => {
     const location = useLocation();
@@ -56,6 +57,7 @@ const Components = () => {
                 <Route path="/typography" element={<Typography ref={sectionRefs} />}/>
                     <Route path="#futura" element={<Futura />}/>
                     <Route path="#arboria" element={<Arboria />}/>
+                    <Route path="#new-spirit" element={<NewSpirit />}/>
                     <Route path="#fallbacks" element={<Fallbacks />}/>
                 <Route path="*" element={<NotFound />}/>
             </Routes>

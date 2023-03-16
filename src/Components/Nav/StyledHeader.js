@@ -37,6 +37,7 @@ export const StyledHeader = styled.nav`
         color: var(--white);
         opacity: 0.75;
         font-weight: 500;
+        white-space: nowrap;
     }
 
     .active-link, .nav-link:hover {

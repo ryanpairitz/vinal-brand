@@ -40,6 +40,10 @@ export const DropdownItems = [
         path: '/typography#arboria'
     },
     {
+        id: 'new-spirit',
+        path: '/typography#new-spirit'
+    },
+    {
         id: 'fallbacks',
         path: '/typography#fallbacks'
     },

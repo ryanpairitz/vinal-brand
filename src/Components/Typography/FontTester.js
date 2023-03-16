@@ -7,7 +7,7 @@ const FontTester = ({ fontName, weightOptions, weightSettings }) => {
         size: ""
     });
     const [input, setInput] = useState("");
-    const initPlaceholder = "Type something to see " + fontName + " in action.";
+    const initPlaceholder = "Type something to see " + fontName.replace('-', ' ') + " in action.";
     const [placeholder, setPlaceholder] = useState(initPlaceholder);
 
     const fontFamily = settings.weight !== "" ? weightSettings[settings.weight.replace(/\s+/g, '')].fontFamily : fontName;
