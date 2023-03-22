@@ -3,10 +3,9 @@ import SectionDivider from "../SectionDivider";
 
 const Expressive = forwardRef((props, expressiveRef) => {
     return (
-        <div
+        <section
             ref={expressiveRef}
-            id="expressive"
-            className="section">
+            id="expressive">
             <div className="container sub">
                 <SectionDivider>
                     Expressive
@@ -14,7 +13,7 @@ const Expressive = forwardRef((props, expressiveRef) => {
                 <div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

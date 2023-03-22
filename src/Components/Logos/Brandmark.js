@@ -1,20 +1,33 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import SectionDivider from "../SectionDivider";
+import InteractiveBrandmark from "./InteractiveBrandmark";
+import Swatch from "./Swatch";
+import { SwatchOptions } from "./Swatches";
 
 const Brandmark = forwardRef((props, brandmarkRef) => {
+    const [activeSwatch, setActiveSwatch] = useState(SwatchOptions[0]);
+
     return (
-        <div
+        <section
             ref={brandmarkRef}
-            id="brandmark"
-            className="section">
+            id="brandmark">
             <div className="container sub">
                 <SectionDivider>
                     Brandmark
                 </SectionDivider>
-                <div>
+                <div className="swatch-container">
+                    {SwatchOptions.map((swatch, index) => {
+                        return (
+                            <Swatch swatch={swatch} key={index}
+                                activeSwatch={activeSwatch}
+                                handleSelect={() => setActiveSwatch(swatch)}
+                            />
+                        )
+                    })}
                 </div>
+                <InteractiveBrandmark activeSwatch={activeSwatch} className="logo-container"/>
             </div>
-        </div>
+        </section>
     );
 });
 

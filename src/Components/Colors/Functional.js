@@ -5,10 +5,9 @@ import { FunctionalSwatches } from "./FunctionalSwatches";
 
 const Functional = forwardRef((props, functionalRef) => {
     return (
-        <div
+        <section
             ref={functionalRef}
-            id="functional"
-            className="section">
+            id="functional">
             <div className="container sub">
                 <SectionDivider>
                     Functional
@@ -21,7 +20,7 @@ const Functional = forwardRef((props, functionalRef) => {
                     })}
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

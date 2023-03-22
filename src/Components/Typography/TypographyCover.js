@@ -2,7 +2,7 @@ import Title from "../Title";
 
 const TypographyCover = () => {
     return (
-        <div className="section">
+        <section>
             <div className="container group-cover">
                 <Title>Typography</Title>
                 <div className="content">
@@ -10,11 +10,11 @@ const TypographyCover = () => {
                         Crisp, easy-to-read type for a variety of applications.
                     </h2>
                     <p>
-                        This section introduces and illustrates when to use each of the following typefaces: Futura, Arboria, and Recoleta.
+                        This section introduces and illustrates when to use each of the following typefaces: Futura, Arboria, and New Spirit.
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

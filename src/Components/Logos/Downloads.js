@@ -3,10 +3,9 @@ import SectionDivider from "../SectionDivider";
 
 const Downloads = forwardRef((props, downloadsRef) => {
     return (
-        <div
+        <section
             ref={downloadsRef}
-            id="downloads"
-            className="section">
+            id="downloads">
             <div className="container sub">
                 <SectionDivider>
                     Downloads
@@ -17,7 +16,7 @@ const Downloads = forwardRef((props, downloadsRef) => {
                 <div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

@@ -5,10 +5,9 @@ import Title from "../Title";
 
 const Voice = forwardRef((props, voiceRef) => {
     return (
-        <div
+        <section
             ref={voiceRef}
-            id="voice"
-            className="section">
+            id="voice">
             <div className="container">
                 <Title>Voice</Title>
                 <div className="content">
@@ -51,7 +50,7 @@ const Voice = forwardRef((props, voiceRef) => {
                     </Card>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

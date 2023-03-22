@@ -4,10 +4,9 @@ import SectionDivider from "../SectionDivider";
 
 const Fallbacks = forwardRef((props, fallbacksRef) => {
     return (
-        <div
+        <section
             ref={fallbacksRef}
-            id="fallbacks"
-            className="section">
+            id="fallbacks">
             <div className="container sub">
                 <SectionDivider>
                     Fallbacks
@@ -33,7 +32,7 @@ const Fallbacks = forwardRef((props, fallbacksRef) => {
                     </Card>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

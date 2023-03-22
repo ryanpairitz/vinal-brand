@@ -2,7 +2,7 @@ import Title from "../Title";
 
 const ColorsCover = () => {
     return (
-        <div className="section">
+        <section>
             <div className="container group-cover">
                 <Title>Colors</Title>
                 <div className="content">
@@ -17,7 +17,7 @@ const ColorsCover = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

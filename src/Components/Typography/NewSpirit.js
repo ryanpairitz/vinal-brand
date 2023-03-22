@@ -34,20 +34,19 @@ const NewSpirit = forwardRef((props, newSpiritRef) => {
     }
 
     return (
-        <div
+        <section
             ref={newSpiritRef}
-            id="new-spirit"
-            className="section">
+            id="new-spirit">
             <div className="container sub">
                 <SectionDivider>
                     New Spirit
                 </SectionDivider>
                 <p>
-                    New Spirit is our impactful serif typeface. Its hand-made and vintage feel lends itself perfectly to more expressive moments, when an accent is needed.
+                    New Spirit is our impactful serif typeface. Its vintage, 70s-inspired characteristics and modern feel make New Spirit perfect for more expressive moments, wherever an accent is needed.
                 </p>
                 <FontTester fontName="New-Spirit" weightOptions={weightOptions} weightSettings={weightSettings}/>
             </div>
-        </div>
+        </section>
     );
 });
 

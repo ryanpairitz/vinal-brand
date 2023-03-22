@@ -34,10 +34,9 @@ const Arboria = forwardRef((props, arboriaRef) => {
     }
 
     return (
-        <div
+        <section
             ref={arboriaRef}
-            id="arboria"
-            className="section">
+            id="arboria">
             <div className="container sub">
                 <SectionDivider>
                     Arboria
@@ -47,7 +46,7 @@ const Arboria = forwardRef((props, arboriaRef) => {
                 </p>
                 <FontTester fontName="Arboria" weightOptions={weightOptions} weightSettings={weightSettings}/>
             </div>
-        </div>
+        </section>
     );
 });
 

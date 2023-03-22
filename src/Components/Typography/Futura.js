@@ -29,10 +29,9 @@ const Futura = forwardRef((props, futuraRef) => {
     }
 
     return (
-        <div
+        <section
             ref={futuraRef}
-            id="futura"
-            className="section">
+            id="futura">
             <div className="container sub">
                 <SectionDivider>
                     Futura
@@ -45,7 +44,7 @@ const Futura = forwardRef((props, futuraRef) => {
                 </p>
                 <FontTester fontName="Futura" weightOptions={weightOptions} weightSettings={weightSettings} />
             </div>
-        </div>
+        </section>
     );
 });
 

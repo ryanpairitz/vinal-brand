@@ -2,7 +2,7 @@ import Title from "../Title";
 
 const LogosCover = () => {
     return (
-        <div className="section">
+        <section>
             <div className="container group-cover">
                 <Title>Logos</Title>
                 <div className="content">
@@ -17,7 +17,7 @@ const LogosCover = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

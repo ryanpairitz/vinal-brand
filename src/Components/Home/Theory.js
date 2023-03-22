@@ -3,10 +3,9 @@ import Title from "../Title";
 
 const Theory = forwardRef((props, theoryRef) => {
     return (
-        <div
+        <section
             ref={theoryRef}
-            id="theory"
-            className="section">
+            id="theory">
             <div className="container">
                 <Title>Theory</Title>
                 <div className="content">
@@ -30,7 +29,7 @@ const Theory = forwardRef((props, theoryRef) => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 
