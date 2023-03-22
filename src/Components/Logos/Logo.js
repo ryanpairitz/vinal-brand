@@ -3,6 +3,7 @@ import SectionDivider from "../SectionDivider.js";
 import Swatch from "./Swatch.js";
 import InteractiveLogo from "./InteractiveLogo.js";
 import { SwatchOptions } from "./Swatches.js";
+import Card from "../Card.js";
 
 const Logo = forwardRef((props, logoRef) => {
     const [activeSwatch, setActiveSwatch] = useState(SwatchOptions[1]);
@@ -25,7 +26,9 @@ const Logo = forwardRef((props, logoRef) => {
                         )
                     })}
                 </div>
-                <InteractiveLogo activeSwatch={activeSwatch} className="logo-container"/>
+                <Card>
+                    <InteractiveLogo activeSwatch={activeSwatch} className="logo-container"/>
+                </Card>
             </div>
         </section>
     );

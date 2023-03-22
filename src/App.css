@@ -296,6 +296,10 @@ textarea::placeholder {
   margin-right: calc(21rem / 25.5);
 }
 
+.swatch:hover {
+  cursor: pointer;
+}
+
 .logo-container {
   border: calc(1.89px * 0.9) solid var(--aluminum);
   border-radius: calc(55rem / 25.5);
