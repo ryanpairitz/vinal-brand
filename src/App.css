@@ -208,7 +208,7 @@ section:last-child > .container:last-child {
   flex: 1 1 calc(50% - (34rem / 25.5) - (2 * 34rem / 25.5));
 }
 
-.color > p, .color > * > p, .color > * > * > p {
+.color > p, .color > * > p {
   font-size: 1rem;
 }
 

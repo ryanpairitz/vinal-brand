@@ -57,15 +57,15 @@ export const ExpressiveSwatches = [
         hex: "#69bfaa"
     },
     {
-        title: "Abbey Road",
+        title: "Luv 4 Rent",
         hex: "#034034"
     },
     {
-        title: "Forest Hills Drive",
+        title: "Abbey Road",
         hex: "#03211C"
     },
     {
-        title: "Apolonio",
+        title: "Nothing Lavender",
         hex: "#9999de"
     },
     {
@@ -77,15 +77,15 @@ export const ExpressiveSwatches = [
         hex: "#df7fa0"
     },
     {
-        title: "S.O.S. Blue",
+        title: "Faith Blue",
         hex: "#07314D"
     },
     {
-        title: "X&Y Navy",
+        title: "S.O.S. Navy",
         hex: "#091D2B"
     },
     {
-        title: "Purple Rain",
+        title: "Apolonio",
         hex: "#9f6dc2"
     },
     {
@@ -93,7 +93,7 @@ export const ExpressiveSwatches = [
         hex: "#421e13"
     },
     {
-        title: "Flower Boy",
+        title: "Parachutes",
         hex: "#e6921d"
     },
     {

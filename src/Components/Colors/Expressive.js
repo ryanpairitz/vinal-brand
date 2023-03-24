@@ -15,7 +15,8 @@ const Expressive = forwardRef((props, expressiveRef) => {
                     Expressive
                 </SectionDivider>
                 <p>
-                    Select any of the following color swatches to craft intriguing palettes, to be applied creatively in expressive moments. 
+                    To craft intriguing palettes for expressive moments, select any of the following color swatches. 
+                    &#40;This is just a sample set for inspiration; creative expression is not limited to these specific colors.&#41;
                 </p>
                 <div className="card-container color-container">
                     {ExpressiveSwatches.map((color, index) => (

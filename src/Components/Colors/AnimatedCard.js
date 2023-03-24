@@ -55,6 +55,7 @@ const AnimatedCard = ({ index, style, className, children, hoverContent, hoverCo
             onMouseMove={handleMouseMove}
             style={{
                 ...style,
+                zIndex: hovering ? 997 : 0,
                 transform: xys.to(trans)
             }}>
             {children}
