@@ -3,7 +3,7 @@ import { SwatchSettings } from "./Swatches";
 const InteractiveBrandmark = ({ activeSwatch, className }) => {
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 597.5 521" enable-background="new 0 0 597.5 521" xmlSpace="preserve" preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 597.5 521" enableBackground="new 0 0 597.5 521" xmlSpace="preserve" preserveAspectRatio="xMidYMid meet"
             style={{
                 background: SwatchSettings[activeSwatch].background
             }}

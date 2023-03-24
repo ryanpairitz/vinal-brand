@@ -58,7 +58,7 @@ h3.condensed {
 
 p {
   color: var(--warm-neutral);
-  font-size: calc(34em / 108);
+  font-size: calc(34rem / 25.5);
   line-height: calc(1.618em);
   margin: 0;
   margin-bottom: 1.618em;
@@ -208,8 +208,19 @@ section:last-child > .container:last-child {
   flex: 1 1 calc(50% - (34rem / 25.5) - (2 * 34rem / 25.5));
 }
 
-.color > p, .color > * > p {
+.color > p, .color > * > p, .color > * > * > p {
   font-size: 1rem;
+}
+
+.hex {
+  font-size: 1rem;
+  text-transform: lowercase;
+}
+
+.color.expressive {
+  border-width: 0;
+  height: calc(144rem / 25.5);
+  flex: 1 0 calc(((100% - (3 * 34rem / 25.5)) / 4) - (2 * 34rem / 25.5));
 }
 
 .font-tester {

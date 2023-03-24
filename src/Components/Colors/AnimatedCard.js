@@ -10,10 +10,9 @@ const calc = (x, y, rect) => [
 const trans = (x, y, s) =>
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const ColorCard = ({ color }) => {
-    const fontColor = color.title.includes("Neutral") || color.title === "White" ? 'var(--black-carbon)' : 'white';
+const AnimatedCard = ({ index, style, className, children, hoverContent, hoverContentClassName }) => {
     const [hovering, setHovering] = useState(false);
-    const cardRef = useRef(null)
+    const cardRef = useRef(null);
     const config = {
         mass: 3.0,
         tension: 510,
@@ -47,47 +46,33 @@ const ColorCard = ({ color }) => {
     }
 
     return (
-        <animated.div className="card color"
+        <animated.div 
+            key={index}
+            className={className}
             ref={cardRef}
             onMouseEnter={() => setHovering(!hovering)}
             onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
             style={{
-                backgroundColor: color.hex,
-                borderWidth: color.title === "Black Carbon" ? "calc(1.89px * 0.9)" : 0,
+                ...style,
                 transform: xys.to(trans)
             }}>
-            <div>
-                <h3 className="condensed"
-                    style={{
-                        color: fontColor,
-                        marginBottom: 0
-                    }}>
-                    {color.title}
-                </h3>
-                <p
-                    style={{
-                        color: fontColor
-                    }}>
-                    {color.hex}
-                </p>
-            </div>
+            {children}
             {transitions((style, item) => (
                 item &&
-                <animated.p
-                    className="light"
+                <animated.div
                     style={{
                         ...{
-                            color: fontColor,
-                            lineHeight: '1em',
+                            color: "inherit",
                         }, ...style
-                    }}>
-                    {color.description}
-                </animated.p>
+                    }}
+                    className={hoverContentClassName}>
+                    {hoverContent}
+                </animated.div>
             ))}
-            <div />
+            <div/>
         </animated.div>
     );
 };
 
-export default ColorCard;
+export default AnimatedCard;

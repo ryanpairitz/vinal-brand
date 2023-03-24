@@ -1,7 +1,9 @@
 import { forwardRef } from "react";
 import SectionDivider from "../SectionDivider";
-import ColorCard from "./ColorCard";
-import { FunctionalSwatches } from "./FunctionalSwatches";
+import AnimatedCard from "./AnimatedCard";
+import ColorDetails from "./ColorDetails";
+import { FunctionalSwatches } from "./ColorSwatches";
+import { isLight } from "./lightnessChecker";
 
 const Functional = forwardRef((props, functionalRef) => {
     return (
@@ -13,11 +15,29 @@ const Functional = forwardRef((props, functionalRef) => {
                     Functional
                 </SectionDivider>
                 <div className="card-container color-container">
-                    {FunctionalSwatches.map((color, index) => {
-                        return (
-                            <ColorCard key={index} color={color}/>
-                        )
-                    })}
+                    {FunctionalSwatches.map((color, index) => (
+                        <AnimatedCard
+                            index={index}
+                            style={{
+                                backgroundColor: color.hex,
+                                color: isLight(color.hex) ? "var(--black-carbon)" : "white",
+                                borderWidth: color.title !== "Black Carbon" && 0
+                            }}
+                            className="card color"
+                            hoverContent={
+                                <p
+                                    style={{
+                                        color: "inherit",
+                                        lineHeight: '1em'
+                                    }}
+                                    className="light">
+                                    {color.description}
+                                </p>
+                            }
+                            hoverContentClassName="light">
+                            <ColorDetails color={color} />
+                        </AnimatedCard>
+                    ))}
                 </div>
             </div>
         </section>
