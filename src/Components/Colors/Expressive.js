@@ -15,13 +15,13 @@ const Expressive = forwardRef((props, expressiveRef) => {
                     Expressive
                 </SectionDivider>
                 <p>
-                    To craft intriguing palettes for expressive moments, select any of the following color swatches. 
+                    To craft intriguing palettes for expressive moments, take the liberty to incorporate any of the following color swatches. 
                     &#40;This is just a sample set for inspiration; creative expression is not limited to these specific colors.&#41;
                 </p>
                 <div className="card-container color-container">
                     {ExpressiveSwatches.map((color, index) => (
                         <AnimatedCard
-                            index={index}
+                            key={index}
                             style={{
                                 backgroundColor: color.hex,
                                 color: isLight(color.hex) ? "var(--black-carbon)" : "white"

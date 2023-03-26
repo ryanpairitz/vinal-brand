@@ -17,7 +17,7 @@ const Footer = ({ location }) => {
                 </span>
                 <span>
                     <Link to="/" className="footer-logo">
-                        <Logo />
+                        <Logo className="logo"/>
                     </Link>
                 </span>
                 <span>

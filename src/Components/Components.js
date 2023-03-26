@@ -4,7 +4,6 @@ import {
     useLocation
 } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import Header from "./Nav/Header";
 import Footer from "./Nav/Footer";
 import NotFound from "./NotFound";
 import Home from "./Home/Home";
@@ -23,6 +22,7 @@ import Futura from "./Typography/Futura";
 import Arboria from "./Typography/Arboria";
 import Fallbacks from "./Typography/Fallbacks";
 import NewSpirit from "./Typography/NewSpirit";
+import BrokenHeader from "./Nav/BrokenHeader";
 
 const Components = () => {
     const location = useLocation();
@@ -41,7 +41,7 @@ const Components = () => {
     
     return (
         <div className="App">
-            <Header location={location}/>
+            <BrokenHeader />
             <Routes>
                 <Route path="/" element={<Home ref={sectionRefs} />}/>
                     <Route path="#philosophy" element={<Philosophy />}/>

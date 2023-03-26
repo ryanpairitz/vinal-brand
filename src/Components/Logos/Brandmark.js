@@ -25,7 +25,7 @@ const Brandmark = forwardRef((props, brandmarkRef) => {
                         )
                     })}
                 </div>
-                <InteractiveBrandmark activeSwatch={activeSwatch} className="logo-container"/>
+                <InteractiveBrandmark activeSwatch={activeSwatch} className="interactive-logo"/>
             </div>
         </section>
     );

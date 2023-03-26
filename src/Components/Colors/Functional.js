@@ -17,7 +17,7 @@ const Functional = forwardRef((props, functionalRef) => {
                 <div className="card-container color-container">
                     {FunctionalSwatches.map((color, index) => (
                         <AnimatedCard
-                            index={index}
+                            key={index}
                             style={{
                                 backgroundColor: color.hex,
                                 color: isLight(color.hex) ? "var(--black-carbon)" : "white",

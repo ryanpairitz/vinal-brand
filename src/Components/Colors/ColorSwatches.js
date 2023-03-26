@@ -57,7 +57,7 @@ export const ExpressiveSwatches = [
         hex: "#69bfaa"
     },
     {
-        title: "Luv 4 Rent",
+        title: "Forest Hills Drive",
         hex: "#034034"
     },
     {

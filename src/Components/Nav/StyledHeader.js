@@ -20,12 +20,8 @@ export const StyledHeader = styled.nav`
         padding: calc(17rem / 22.95) 0rem;
     }
 
-    .nav-item:first-of-type {
-        margin: 0;
-    }
-
-    .nav-item:first-child {
-        margin-left: 1.3333rem;
+    .nav-item-first {
+        margin-left: 0;
     }
 
     .nav-title {

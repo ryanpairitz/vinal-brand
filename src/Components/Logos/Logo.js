@@ -25,7 +25,7 @@ const Logo = forwardRef((props, logoRef) => {
                         )
                     })}
                 </div>
-                <InteractiveLogo activeSwatch={activeSwatch} className="logo-container"/>
+                <InteractiveLogo activeSwatch={activeSwatch} className="interactive-logo"/>
             </div>
         </section>
     );

@@ -45,6 +45,7 @@ const FontTester = ({ fontName, weightOptions, weightSettings }) => {
                     fontWeight: fontWeight,
                     fontSize: fontSize
                 }}
+                className={settings.weight.includes("Condensed") ? "condensed" : ""}
                 maxRows={settings.size === "Large" || settings.size === "" ? 3 : 6}
                 wrap="soft"
                 value={input}

@@ -52,8 +52,15 @@ h3 {
   margin-bottom: calc(21em / 108);
 }
 
-h3.condensed {
-  font-family: 'Futura-CondensedMedium';
+.condensed {
+  font-family: Futura-CondensedMedium, 'Futura-CondensedMedium', 'Futura' !important;
+}
+
+@-moz-document url-prefix() {
+  .condensed {
+    font-family: 'Futura';
+    font-stretch: condensed;
+  }
 }
 
 p {
@@ -97,6 +104,10 @@ section:first-child {
   display: flex;
   align-items: center;
   min-height: 100vh;
+}
+
+.logo {
+  display: block;
 }
 
 .hero {
@@ -279,8 +290,13 @@ textarea {
   height: auto;
 }
 
-textarea::placeholder {
+textarea::placeholder, textarea::-webkit-input-placeholder {
   color: var(--warm-neutral);
+}
+
+textarea:-moz-placeholder, textarea::-moz-placeholder {
+  color: var(--warm-neutral);
+  opacity: 1;
 }
 
 #philosophy {
@@ -311,7 +327,7 @@ textarea::placeholder {
   cursor: pointer;
 }
 
-.logo-container {
+.interactive-logo {
   border: calc(1.89px * 0.9) solid var(--aluminum);
   border-radius: calc(55rem / 25.5);
   width: 100%;

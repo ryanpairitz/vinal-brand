@@ -10,7 +10,7 @@ const calc = (x, y, rect) => [
 const trans = (x, y, s) =>
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const AnimatedCard = ({ index, style, className, children, hoverContent, hoverContentClassName }) => {
+const AnimatedCard = ({ style, className, children, hoverContent, hoverContentClassName }) => {
     const [hovering, setHovering] = useState(false);
     const cardRef = useRef(null);
     const config = {
@@ -29,7 +29,7 @@ const AnimatedCard = ({ index, style, className, children, hoverContent, hoverCo
         leave: { opacity: 0 },
     });
 
-    const [{ xys }, api] = useSpring(() => ({ xys: [0, 0, 1], config }), [config])
+    const [{ xys }, api] = useSpring(() => ({ xys: [0, 0, 1], config }), [])
 
     const handleMouseLeave = () => {
         setHovering(false);
@@ -47,7 +47,6 @@ const AnimatedCard = ({ index, style, className, children, hoverContent, hoverCo
 
     return (
         <animated.div 
-            key={index}
             className={className}
             ref={cardRef}
             onMouseEnter={() => setHovering(!hovering)}
