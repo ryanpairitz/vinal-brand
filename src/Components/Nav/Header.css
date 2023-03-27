@@ -1,4 +1,4 @@
-nav {
+nav, .hamburger-container {
     z-index: 998;
     height: 166.5px;
     position: fixed;
@@ -11,7 +11,7 @@ nav:first-of-type {
     margin-right: calc(55rem / 25.5);
 }
 
-nav:last-of-type {
+nav:last-of-type, .hamburger-container {
     right: 0;
     margin-right: calc(55rem / 25.5);
 }
@@ -20,6 +20,17 @@ nav:last-of-type {
     display: block;
     margin-left: calc(55rem / 25.5);
     margin-right: calc(34rem / 25.5);
+}
+
+.hamburger-container {
+    height: calc(166.5px * 0.85);
+}
+
+.hamburger {
+    display: block;
+    line-height: 0; 
+    z-index: 9999;
+    cursor: pointer;
 }
 
 .nav-item {

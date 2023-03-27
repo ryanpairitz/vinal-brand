@@ -17,7 +17,7 @@ const HeaderLogo = ({ height, scrolled, config }) => {
         },
     });
 
-    const [style, api] = useSpring(() => ({
+    const style = useSpring({
         config: config,
         from: {
             scale: scrolled ? 1 : 0.85,
@@ -25,7 +25,7 @@ const HeaderLogo = ({ height, scrolled, config }) => {
         to: {
             scale: scrolled ? 0.85 : 1,
         }
-    }), [resting])
+    })
 
     const transition = useTransition(!scrolled, {
         config: config,
@@ -41,7 +41,7 @@ const HeaderLogo = ({ height, scrolled, config }) => {
             opacity: 0,
             y: -166.5
         },
-        onRest: () => setResting(scrolled)
+        onDestroyed: () => setResting(scrolled)
     });
 
     useLayoutEffect(() => {

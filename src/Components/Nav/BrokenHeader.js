@@ -4,9 +4,11 @@ import { RelativePaths } from "./RelativePaths";
 import HeaderItem from "./HeaderItem";
 import './Header.css';
 import { useEffect, useState } from "react";
+import Hamburger from "./Hamburger";
 
 const BrokenHeader = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
     const config = {
         mass: 3.0,
         tension: 510,
@@ -21,7 +23,7 @@ const BrokenHeader = () => {
         to: {
             opacity: scrolled ? 0 : 1,
             y: scrolled ? -166.5 : 0
-        },
+        }
     });
     const transition = useTransition(!scrolled, {
         config: config,
@@ -36,8 +38,28 @@ const BrokenHeader = () => {
         leave: {
             opacity: 0,
             y: -166.5
-        }
+        },
+        onDestroyed: () => setScrolled(scrolled)
     });
+    const hamburgerTransition = useTransition(scrolled, {
+        config: config,
+        from: {
+            opacity: 0,
+            // y: -166.5
+            scale: 0
+        },
+        enter: {
+            opacity: 1,
+            // y: 0
+            scale: 1
+        },
+        leave: {
+            opacity: 0,
+            // y: -166.5
+            scale: 1
+        },
+        onStart: () => setScrolled(false)
+    })
 
     useEffect(() => {
         window.addEventListener('scroll', updateHeader);
@@ -71,9 +93,17 @@ const BrokenHeader = () => {
             <animated.nav style={style}>
                 {RelativePaths.map((item, index) => (
                     item.id !== "home" &&
-                    <HeaderItem item={item} isLast={(index + 1) == RelativePaths.length} key={index} />
+                    <HeaderItem item={item} isLast={(index + 1) === RelativePaths.length} key={index} />
                 ))}
             </animated.nav>
+            {hamburgerTransition((style, content) => (
+                content &&
+                <animated.span style={style}
+                    className="hamburger-container"
+                >
+                    <Hamburger openMenu={openMenu} setOpenMenu={setOpenMenu} style={{ width: "calc(55rem / 25.5)" }} />
+                </animated.span>
+            ))}
         </>
     );
 }
