@@ -22,7 +22,7 @@ import Futura from "./Typography/Futura";
 import Arboria from "./Typography/Arboria";
 import Fallbacks from "./Typography/Fallbacks";
 import NewSpirit from "./Typography/NewSpirit";
-import BrokenHeader from "./Nav/BrokenHeader";
+import Header from "./Nav/Header";
 
 const Components = () => {
     const location = useLocation();
@@ -41,7 +41,7 @@ const Components = () => {
     
     return (
         <div className="App">
-            <BrokenHeader />
+            <Header location={location}/>
             <Routes>
                 <Route path="/" element={<Home ref={sectionRefs} />}/>
                     <Route path="#philosophy" element={<Philosophy />}/>

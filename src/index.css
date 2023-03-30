@@ -8,9 +8,9 @@
   --aluminum: #333333;
   --carbon: #272727;
   --black-carbon: #161616;
-  --abbey-road-green: #034034;
-  --x-y-navy: #091D2B;
-  --s-o-s-blue: #07314D;
+  --forest-hills-drive: #034034;
+  --s-o-s-navy: #091D2B;
+  --faith-blue: #07314D;
   --deep-depression-cherry: #2B060F;
   --white: #FFFFFF;
   --warm-neutral: #E6E0D8;
@@ -23,4 +23,16 @@ html, body {
   font-family: 'Arboria', 'Arial',
     sans-serif;
   font-size: 22.95px;
+}
+
+::selection {
+  background: var(--blonde-green);
+}
+
+::-webkit-selection {
+  background: var(--blonde-green);
+}
+
+::-moz-selection {
+  background: var(--blonde-green);
 }

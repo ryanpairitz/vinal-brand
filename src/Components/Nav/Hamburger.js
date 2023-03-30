@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import hamburgerAnimationData from "./icon-hamburger-data.json";
 import lottie from 'lottie-web';
 
-const Hamburger = ({ openMenu, setOpenMenu, style }) => {
+const Hamburger = ({ openMenu, toggleOpenMenu }) => {
     const hamburgerContainer = useRef(null);
     const hamburger = useRef(null);
 
@@ -16,29 +16,20 @@ const Hamburger = ({ openMenu, setOpenMenu, style }) => {
                 animationData: hamburgerAnimationData,
             });
 
-            return () => {
-                hamburger.current?.destroy();
-            }
+            return () => hamburger.current?.destroy();
         }
     }, []);
 
-    const toggleOnClick = () => {
-        setOpenMenu(!openMenu);
-        hamburger.current?.setDirection(openMenu ? -1 : 1);
+    useEffect(() => {
+        hamburger.current?.setDirection(openMenu ? 1 : -1);
         hamburger.current?.play();
-    }
-    const closeOnClick = () => {
-        setOpenMenu(false);
-        hamburger.current?.setDirection(-1);
-        hamburger.current?.play();
-    }
+    }, [openMenu])
 
     return (
         <span
-            style={style}
-            className="hamburger"
+            className="icon"
             ref={hamburgerContainer}
-            onClick={toggleOnClick} />
+            onClick={toggleOpenMenu} />
     );
 }
 
