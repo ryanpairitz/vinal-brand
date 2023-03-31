@@ -8,7 +8,7 @@ import Hamburger from "./Hamburger";
 import HeaderWrapper from "./HeaderWrapper";
 import HeaderMenu from "./HeaderMenu";
 
-const BrokenHeader = ({ location }) => {
+const Header = ({ location, intersectingSection }) => {
     const height = 166.5;
     const scalar = 0.85;
     const minimize = () => window.scrollY >= height * 0.618;
@@ -37,13 +37,8 @@ const BrokenHeader = ({ location }) => {
     const [scrolled, setScrolled] = useState(minimize);
     const [openMenu, setOpenMenu] = useState(false);
     const [condense, setCondense] = useState(shouldBeCondensed);
-    const transition = useTransition(!(scrolled || condense), {
-        ...transitionSettings,
-        // onDestroyed: () => setScrolled(scrolled)
-    });
-    const titleTransition = useTransition(!scrolled, {
-        ...transitionSettings
-    });
+    const transition = useTransition(!(scrolled || condense), transitionSettings);
+    const titleTransition = useTransition(!scrolled, transitionSettings);
     const hamburgerTransition = useTransition((scrolled || condense), {
         config: config,
         from: {
@@ -57,8 +52,7 @@ const BrokenHeader = ({ location }) => {
         leave: {
             opacity: 0,
             scale: 0
-        },
-        // onStart: () => setScrolled(false)
+        }
     });
     const hamburgerStyle = useSpring({
         config: config,
@@ -92,7 +86,8 @@ const BrokenHeader = ({ location }) => {
     const toggleOpenMenu = () => setOpenMenu(!openMenu);
 
     return (
-        <HeaderWrapper location={location} height={height} scalar={scalar} scrolled={scrolled} condense={condense} config={config}>
+        <HeaderWrapper location={location} height={height} scalar={scalar} 
+            scrolled={scrolled} condense={condense} config={config} intersectingSection={intersectingSection}>
             <nav style={{ marginRight: (scrolled || condense) && 0 }}>
                 <HeaderLogo height={height} scalar={scalar} scrolled={scrolled} config={config} transitionSettings={transitionSettings} />
                 {titleTransition((style, content) => (
@@ -102,7 +97,7 @@ const BrokenHeader = ({ location }) => {
                             id: "home",
                             pathname: "/",
                             next: "/logos"
-                        }} />
+                        }} condense={condense}/>
                     </animated.span>
                 ))}
             </nav>
@@ -126,4 +121,4 @@ const BrokenHeader = ({ location }) => {
     );
 }
 
-export default BrokenHeader;
+export default Header;

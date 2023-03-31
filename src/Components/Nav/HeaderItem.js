@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { DropdownItems } from "./DropdownItems";
 
-const HeaderItem = ({ item, isLast }) => {
+const HeaderItem = ({ item, isLast, condense }) => {
     const activeLinkClass = "nav-link active-link";
     const inactiveLinkClass = "nav-link";
     const containerClass = "nav-item";
@@ -33,7 +33,7 @@ const HeaderItem = ({ item, isLast }) => {
                 {item.id === "home" ? "brand guide" : item.id}
             </NavLink>
             {/* when associated dropdown is true, show dropdown */}
-            {transition((style, show) => (
+            {!condense && transition((style, show) => (
                 show &&
                 <animated.ul style={style}
                     className={dropdownContainerClass}>

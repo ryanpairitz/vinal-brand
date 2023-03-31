@@ -3,7 +3,7 @@ import {
     Routes,
     useLocation
 } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Footer from "./Nav/Footer";
 import NotFound from "./NotFound";
 import Home from "./Home/Home";
@@ -23,43 +23,63 @@ import Arboria from "./Typography/Arboria";
 import Fallbacks from "./Typography/Fallbacks";
 import NewSpirit from "./Typography/NewSpirit";
 import Header from "./Nav/Header";
+import { DropdownItems } from "./Nav/DropdownItems";
 
 const Components = () => {
     const location = useLocation();
     const sectionRefs = useRef([]);
+    const [intersectingSection, setIntersectingSection] = useState("");
 
     useEffect(() => {
-        if (!location.hash){
+        if (!location.hash) {
             window.scrollTo({
                 top: 0,
                 left: 0,
                 behavior: 'smooth'
             });
         }
-        else sectionRefs.current[location.hash.substring(1)]?.scrollIntoView({behavior: 'smooth'});
+        else sectionRefs.current[location.hash.substring(1)]?.scrollIntoView({ behavior: 'smooth' });
     }, [location]);
-    
+
+    useLayoutEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting)
+                setIntersectingSection(entry.target.id);
+            else
+                setIntersectingSection("");
+        });
+        // DropdownItems.forEach((item) => {
+        //     if (item.path.substring(0, item.path.indexOf('#')) === location.pathname) {
+        //         observer.observe(sectionRefs.current[item.id])
+        //     }
+        // });
+        if (location.pathname === "/")
+            // observer.observe(sectionRefs.current["philosophy"]);
+            observer.observe(sectionRefs.current[DropdownItems[0].id]);
+    });
+
     return (
         <div className="App">
-            <Header location={location}/>
+            <Header location={location} intersectingSection={intersectingSection} />
             <Routes>
-                <Route path="/" element={<Home ref={sectionRefs} />}/>
-                    <Route path="#philosophy" element={<Philosophy />}/>
-                    <Route path="#theory" element={<Theory />}/>
-                    <Route path="#voice" element={<Voice />}/>
-                <Route path="/logos" element={<Logos ref={sectionRefs} />}/>
-                    <Route path="#logo" element={<Logo />}/>
-                    <Route path="#brandmark" element={<Brandmark />}/>
-                    <Route path="#downloads" element={<Downloads />}/>
-                <Route path="/colors" element={<Colors ref={sectionRefs} />}/>
-                    <Route path="#functional" element={<Functional />}/>
-                    <Route path="#expressive" element={<Expressive />}/>
-                <Route path="/typography" element={<Typography ref={sectionRefs} />}/>
-                    <Route path="#futura" element={<Futura />}/>
-                    <Route path="#arboria" element={<Arboria />}/>
-                    <Route path="#new-spirit" element={<NewSpirit />}/>
-                    <Route path="#fallbacks" element={<Fallbacks />}/>
-                <Route path="*" element={<NotFound />}/>
+                <Route path="/" element={<Home ref={sectionRefs} />} />
+                <Route path="#philosophy" element={<Philosophy />} />
+                <Route path="#theory" element={<Theory />} />
+                <Route path="#voice" element={<Voice />} />
+                <Route path="/logos" element={<Logos ref={sectionRefs} />} />
+                <Route path="#logo" element={<Logo />} />
+                <Route path="#brandmark" element={<Brandmark />} />
+                <Route path="#downloads" element={<Downloads />} />
+                <Route path="/colors" element={<Colors ref={sectionRefs} />} />
+                <Route path="#functional" element={<Functional />} />
+                <Route path="#expressive" element={<Expressive />} />
+                <Route path="/typography" element={<Typography ref={sectionRefs} />} />
+                <Route path="#futura" element={<Futura />} />
+                <Route path="#arboria" element={<Arboria />} />
+                <Route path="#new-spirit" element={<NewSpirit />} />
+                <Route path="#fallbacks" element={<Fallbacks />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer location={location} />
         </div>
