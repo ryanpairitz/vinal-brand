@@ -11,13 +11,13 @@ const HeaderWrapper = ({ location, height, scalar, scrolled, condense, config, i
         }
     });
 
-    const colorStyle = useSpring(condense && {
+    const colorStyle = useSpring({
         config: config,
         from: {
-            backgroundColor: (intersectingSection === "philosophy") ? "var(--black-carbon)" : location.pathname !== "/" ? "var(--black-carbon)" : "var(--deep-depression-cherry)"
+            backgroundColor: intersectingSection === "philosophy" ? "#161616" : location.pathname !== "/" ? "#161616" : "#2B060F"
         },
         to: {
-            backgroundColor: (intersectingSection === "philosophy") ? "var(--deep-depression-cherry)" : "var(--black-carbon)"
+            backgroundColor: intersectingSection === "philosophy" ? "#2B060F" : "#161616"
         }
     });
     

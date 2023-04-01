@@ -1,4 +1,5 @@
 import { animated, useTransition } from "@react-spring/web";
+import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { DropdownItems } from "./DropdownItems";
 import { RelativePaths } from "./RelativePaths";
@@ -25,6 +26,12 @@ const HeaderMenu = ({ openMenu, toggleOpenMenu, condense, headerHeight, config }
             x: 233
         }
     });
+
+    useEffect(() => {
+        if (typeof window != "undefined" && window.document) {
+            document.body.style.overflow = openMenu ? "hidden" : "unset";
+        }
+    }, [openMenu]);
 
     return (
         transition((style, content) =>

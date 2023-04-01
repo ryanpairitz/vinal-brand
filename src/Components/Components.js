@@ -3,7 +3,7 @@ import {
     Routes,
     useLocation
 } from "react-router-dom";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "./Nav/Footer";
 import NotFound from "./NotFound";
 import Home from "./Home/Home";
@@ -41,22 +41,23 @@ const Components = () => {
         else sectionRefs.current[location.hash.substring(1)]?.scrollIntoView({ behavior: 'smooth' });
     }, [location]);
 
-    useLayoutEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            const entry = entries[0];
-            if (entry.isIntersecting)
-                setIntersectingSection(entry.target.id);
-            else
-                setIntersectingSection("");
-        });
-        // DropdownItems.forEach((item) => {
-        //     if (item.path.substring(0, item.path.indexOf('#')) === location.pathname) {
-        //         observer.observe(sectionRefs.current[item.id])
-        //     }
-        // });
-        if (location.pathname === "/")
+    useEffect(() => {
+        if (location.pathname === "/") {
+            const observer = new IntersectionObserver((entries) => {
+                const entry = entries[0];
+                if (entry.isIntersecting)
+                    setIntersectingSection(entry.target.id);
+                else
+                    setIntersectingSection("");
+            });
+            // DropdownItems.forEach((item) => {
+            //     if (item.path.substring(0, item.path.indexOf('#')) === location.pathname) {
+            //         observer.observe(sectionRefs.current[item.id])
+            //     }
+            // });
             // observer.observe(sectionRefs.current["philosophy"]);
             observer.observe(sectionRefs.current[DropdownItems[0].id]);
+        }
     });
 
     return (
