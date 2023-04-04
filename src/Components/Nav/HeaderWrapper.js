@@ -1,16 +1,6 @@
 import { animated, useSpring } from "@react-spring/web";
 
-const HeaderWrapper = ({ location, height, scalar, scrolled, condense, config, intersectingSection, children }) => {
-    const style = useSpring({
-        config: config,
-        from: {
-            height: scrolled ? height : height * scalar,
-        },
-        to: {
-            height: scrolled ? height * scalar : height,
-        }
-    });
-
+const HeaderWrapper = ({ location, size, condense, config, intersectingSection, children }) => {
     const colorStyle = useSpring({
         config: config,
         from: {
@@ -24,9 +14,10 @@ const HeaderWrapper = ({ location, height, scalar, scrolled, condense, config, i
     return (
         condense ? 
         <animated.div
+            className="header-container"
             style={{
-                ...style,
                 ...colorStyle,
+                height: size,
                 position: "fixed",
                 zIndex: 998,
                 width: "100%",

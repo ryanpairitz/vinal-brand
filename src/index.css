@@ -22,7 +22,7 @@ html, body {
   color: var(--white);
   font-family: 'Arboria', 'Arial',
     sans-serif;
-  font-size: 22.95px;
+  font-size: 30.6px;
 }
 
 ::selection {
@@ -35,4 +35,25 @@ html, body {
 
 ::-moz-selection {
   background: var(--blonde-green);
+}
+
+@media screen and (max-width: 1370px) {
+  html, body {
+    font-size: calc(34px * 0.7639);
+  }
+}
+@media screen and (max-width: 1205px) {
+  html, body {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html, body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 195px) {
+  html, body {
+    font-size: 15px;
+  }
 }

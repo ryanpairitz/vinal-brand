@@ -49,13 +49,9 @@ const Components = () => {
                     setIntersectingSection(entry.target.id);
                 else
                     setIntersectingSection("");
+            }, {
+                rootMargin: "0px 0px 100% 0px"
             });
-            // DropdownItems.forEach((item) => {
-            //     if (item.path.substring(0, item.path.indexOf('#')) === location.pathname) {
-            //         observer.observe(sectionRefs.current[item.id])
-            //     }
-            // });
-            // observer.observe(sectionRefs.current["philosophy"]);
             observer.observe(sectionRefs.current[DropdownItems[0].id]);
         }
     });

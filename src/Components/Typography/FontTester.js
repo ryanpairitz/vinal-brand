@@ -12,8 +12,8 @@ const FontTester = ({ fontName, weightOptions, weightSettings }) => {
 
     const fontFamily = settings.weight !== "" ? weightSettings[settings.weight.replace(/\s+/g, '')].fontFamily : fontName;
     const fontWeight = settings.weight !== "" ? weightSettings[settings.weight.replace(/\s+/g, '')].fontWeight : "normal";
-    const fontSize = settings.size === "Medium" ? "calc(55rem / 25.5)" 
-        : settings.size === "Small" ? "calc(34rem / 25.5" : "calc(89rem / 25.5)";
+    const fontSize = settings.size === "Medium" ? "calc(55em / 34)" 
+        : settings.size === "Small" ? "calc(34em / 34" : "calc(89em / 34)";
 
     const handleChangeSettings = (e) => {
         e.preventDefault();
@@ -46,7 +46,7 @@ const FontTester = ({ fontName, weightOptions, weightSettings }) => {
                     fontSize: fontSize
                 }}
                 className={settings.weight.includes("Condensed") ? "condensed" : ""}
-                maxRows={settings.size === "Large" || settings.size === "" ? 3 : 6}
+                maxRows={settings.size === "Large" || settings.size === "" ? 4 : 6}
                 wrap="soft"
                 value={input}
                 placeholder={placeholder}

@@ -25,6 +25,7 @@ const HeaderItem = ({ item, isLast, condense }) => {
         <span
             onMouseEnter={() => setDropdown(!dropdown)}
             onMouseLeave={() => setDropdown(false)}
+            onClick={() => setDropdown(false)}
             className={containerClass}>
             <NavLink to={item.pathname} className={({ isActive }) =>
                 item.id === "home" ? "nav-title" :

@@ -2,7 +2,7 @@ import { animated, useSpring, useTransition } from "@react-spring/web";
 import { useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const HeaderLogo = ({ height, scalar, scrolled, config, transitionSettings }) => {
+const HeaderLogo = ({ height, scaleStyle, scrolled, config, transitionSettings }) => {
     const [resting, setResting] = useState(false);
 
     const fadeInStyle = useSpring({
@@ -16,16 +16,6 @@ const HeaderLogo = ({ height, scalar, scrolled, config, transitionSettings }) =>
             y: 0
         },
     });
-
-    const style = useSpring({
-        config: config,
-        from: {
-            scale: scrolled ? 1 : 1 * scalar,
-        },
-        to: {
-            scale: scrolled ? 1 * scalar : 1,
-        }
-    })
 
     const transition = useTransition(!scrolled, {
         ...transitionSettings,
@@ -41,8 +31,8 @@ const HeaderLogo = ({ height, scalar, scrolled, config, transitionSettings }) =>
     return (
         <animated.svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox={resting ? "0 0 66.6423 166.5" : "0 0 168.1 166.5"} xmlSpace="preserve"
-            height={height} className="logo-container"
-            style={{ ...style, display: "block", marginRight: (resting && scrolled) && 0, transformOrigin: "top left" }}>
+            className="logo-container"
+            style={{ ...scaleStyle, marginRight: (resting && scrolled) && 0, transformOrigin: "top left" }}>
             <NavLink to="/">
                 {/* need to wrap the elements within the link in image tag, so can click link anywhere within bounding box */}
                 <image x="0.5" y="49.4" fill="none" width={resting ? "66.6423" : "167.1"} height="67.8" />

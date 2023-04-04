@@ -7,7 +7,7 @@ import TypographyCover from "./TypographyCover";
 
 const Typography = forwardRef((props, sectionRefs) => {
     return (
-        <div>
+        <div id="typography">
             <TypographyCover />
             <Futura ref={(element) => sectionRefs.current['futura'] = element}/>
             <Arboria ref={(element) => sectionRefs.current['arboria'] = element}/>

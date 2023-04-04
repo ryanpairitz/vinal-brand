@@ -29,9 +29,9 @@ const HeaderMenu = ({ openMenu, toggleOpenMenu, condense, headerHeight, config }
 
     useEffect(() => {
         if (typeof window != "undefined" && window.document) {
-            document.body.style.overflow = openMenu ? "hidden" : "unset";
+            document.body.style.overflow = (openMenu && condense) ? "hidden" : "unset";
         }
-    }, [openMenu]);
+    }, [openMenu,condense]);
 
     return (
         transition((style, content) =>

@@ -8,16 +8,21 @@ import Hamburger from "./Hamburger";
 import HeaderWrapper from "./HeaderWrapper";
 import HeaderMenu from "./HeaderMenu";
 
+const minUnwrappedWidth = 758.7;
+
 const Header = ({ location, intersectingSection }) => {
-    const height = 166.5;
     const scalar = 0.85;
-    const minimize = () => window.scrollY >= height * 0.618;
-    const shouldBeCondensed = () => window.innerWidth < 744;
     const config = {
         mass: 3.0,
         tension: 510,
         friction: 52,
     };
+    const [windowSize, setWindowSize] = useState(getWindowSize);
+    const [height, setHeight] = useState(determineHeight(windowSize.innerWidth));
+    const minimize = () => window.scrollY >= height * 0.618;
+    const [scrolled, setScrolled] = useState(minimize);
+    const [openMenu, setOpenMenu] = useState(false);
+    const [condense, setCondense] = useState(false);
     const transitionSettings = {
         config: config,
         from: {
@@ -33,10 +38,6 @@ const Header = ({ location, intersectingSection }) => {
             y: -1 * height
         }
     };
-
-    const [scrolled, setScrolled] = useState(minimize);
-    const [openMenu, setOpenMenu] = useState(false);
-    const [condense, setCondense] = useState(shouldBeCondensed);
     const transition = useTransition(!(scrolled || condense), transitionSettings);
     const titleTransition = useTransition(!scrolled, transitionSettings);
     const hamburgerTransition = useTransition((scrolled || condense), {
@@ -54,15 +55,24 @@ const Header = ({ location, intersectingSection }) => {
             scale: 0
         }
     });
-    const hamburgerStyle = useSpring({
+    const { size } = useSpring({
         config: config,
         from: {
-            height: scrolled ? height : height * scalar,
+            size: scrolled ? (height) : (height * scalar),
         },
         to: {
-            height: scrolled ? height * scalar : height,
+            size: scrolled ? (height * scalar) : (height),
         }
     });
+    const scaleStyle = useSpring({
+        config: config,
+        from: {
+            scale: scrolled ? 1 : scalar,
+        },
+        to: {
+            scale: scrolled ? scalar : 1,
+        }
+    })
 
     useLayoutEffect(() => {
         const updateHeader = () => setScrolled(minimize);
@@ -70,26 +80,28 @@ const Header = ({ location, intersectingSection }) => {
         return () =>
             window.removeEventListener('scroll', updateHeader);
     });
-
     useLayoutEffect(() => {
-        const handleResize = () => setCondense(shouldBeCondensed);
+        const handleResize = () => setWindowSize(getWindowSize);
         window.addEventListener('resize', handleResize);
         return () =>
             window.removeEventListener('resize', handleResize);
     });
-
     useEffect(() => {
         if (!scrolled && !condense && openMenu)
             setOpenMenu(false)
     }, [scrolled, condense, openMenu]);
+    useEffect(() => {
+        setCondense(windowSize.innerWidth < minUnwrappedWidth);
+        setHeight(determineHeight(windowSize.innerWidth));
+    },[windowSize]);
 
     const toggleOpenMenu = () => setOpenMenu(!openMenu);
 
     return (
-        <HeaderWrapper location={location} height={height} scalar={scalar} 
-            scrolled={scrolled} condense={condense} config={config} intersectingSection={intersectingSection}>
-            <nav style={{ marginRight: (scrolled || condense) && 0 }}>
-                <HeaderLogo height={height} scalar={scalar} scrolled={scrolled} config={config} transitionSettings={transitionSettings} />
+        <HeaderWrapper location={location} size={size} 
+            condense={condense} config={config} intersectingSection={intersectingSection}>
+            <nav style={{ height: height, marginRight: (scrolled || condense) && 0 }}>
+                <HeaderLogo height={height} scaleStyle={scaleStyle} scrolled={scrolled} config={config} transitionSettings={transitionSettings} />
                 {titleTransition((style, content) => (
                     content &&
                     <animated.span style={style}>
@@ -112,13 +124,24 @@ const Header = ({ location, intersectingSection }) => {
             ))}
             {hamburgerTransition((style, content) => (
                 content &&
-                <animated.span style={{...style, ...hamburgerStyle}} className="hamburger-container">
+                <animated.span style={{ ...style, ...scaleStyle, height: height, transformOrigin: "top center" }} className="hamburger-container">
                     <Hamburger openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} />
                 </animated.span>
             ))}
             <HeaderMenu openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} condense={condense} headerHeight={height * scalar} config={config} />
         </HeaderWrapper>
     );
+}
+
+const getWindowSize = () => {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+}
+const determineHeight = (windowWidth) => {
+    if (windowWidth <= minUnwrappedWidth)
+        return 166.5 / 1.618;
+    else
+        return 166.5;
 }
 
 export default Header;
