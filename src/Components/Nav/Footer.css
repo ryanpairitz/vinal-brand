@@ -46,6 +46,7 @@ footer {
 
 .nav-button-label {
   margin: 0 calc(34em / 25.5);
+  color: var(--white);
 }
 
 .arrow {
