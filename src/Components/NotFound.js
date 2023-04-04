@@ -1,6 +1,10 @@
 const NotFound = () => {
     return (
-        <div className="section">404 Not Found</div>
+        <section id="out-of-bounds">
+            <div className="container">
+                404 Not Found
+            </div>
+        </section>
     );
 };
 

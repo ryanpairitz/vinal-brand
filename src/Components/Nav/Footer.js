@@ -6,8 +6,8 @@ import "./Footer.css";
 
 const Footer = ({ location }) => {
     const curr = RelativePaths.find(current => current.pathname === location.pathname);
-    const prev = curr.prev;
-    const next = curr.next;
+    const prev = curr && curr.prev;
+    const next = curr && curr.next;
 
     return (
         <footer>

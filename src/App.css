@@ -345,6 +345,17 @@ textarea:-moz-placeholder, textarea::-moz-placeholder {
   max-height: 53vh;
 }
 
+#out-of-bounds {
+  height: 90.98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'New-Spirit', 'Arboria', sans-serif;
+  font-size: calc(108rem / 34);
+  font-weight: 700;
+  color: var(--warm-neutral);
+}
+
 @media screen and (max-width: 1537px) {
   #typography > * > .group-cover > .content {
     width: 76.3924%;
