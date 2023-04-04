@@ -350,7 +350,7 @@ textarea:-moz-placeholder, textarea::-moz-placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'New-Spirit', 'Arboria', sans-serif;
+  font-family: 'New-Spirit', 'Arboria', 'Arial', sans-serif;
   font-size: calc(108rem / 34);
   font-weight: 700;
   color: var(--warm-neutral);
