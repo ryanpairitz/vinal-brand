@@ -345,6 +345,22 @@ textarea:-moz-placeholder, textarea::-moz-placeholder {
   max-height: 53vh;
 }
 
+.download-container {
+  flex: 1 0 calc((100% - 1rem) / 2);
+  font: inherit;
+}
+
+.download {
+  max-height: none;
+  background-color: var(--aluminum);
+}
+
+.download-container > p {
+  text-decoration: underline;
+  text-decoration-thickness: calc(1.89px * 0.9);
+  margin: 1rem 0 0 1rem;
+}
+
 #out-of-bounds {
   height: 90.98vh;
   display: flex;
@@ -484,6 +500,21 @@ textarea:-moz-placeholder, textarea::-moz-placeholder {
   }
   #fallbacks > * > .card-container > .card:last-child {
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 300px) {
+  #downloads > * > .card-container {
+    display: block;
+  }
+  .download-container {
+    margin-bottom: 1rem;
+  }
+  .download-container:last-child {
+    margin-bottom: 0;
+  }
+  .download-container > p {
+    margin-left: 0;
+    text-align: center;
   }
 }
 @media screen and (max-width: 280px) {
