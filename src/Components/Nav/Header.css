@@ -1,0 +1,138 @@
+nav,
+.menu {
+    font-size: 22.95px;
+}
+
+nav,
+.hamburger-container {
+    z-index: 996;
+    height: 166.5px;
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+    line-height: 1em;
+}
+
+nav:last-of-type,
+.hamburger-container {
+    right: 0;
+    margin-right: calc(55px * 0.9);
+}
+
+nav:first-of-type {
+    left: 0;
+    margin-right: calc(55rem / 34);
+}
+
+.logo-container {
+    height: 166.5px;
+    display: block;
+    margin-left: calc(55px * 0.9);
+    margin-right: calc(34em / 25.5);
+}
+
+.hamburger-container {
+    z-index: 999;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: calc(34em / 25.5);
+    padding: 1rem 0;
+}
+
+nav:first-of-type>*>.nav-item {
+    margin-left: 0;
+}
+
+.nav-title {
+    color: var(--blkswn-rose);
+    font-weight: 600;
+}
+
+.nav-title:visited {
+    color: var(--blkswn-rose);
+}
+
+.nav-link {
+    color: var(--white);
+    opacity: 0.75;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.active-link,
+.nav-link:hover {
+    opacity: 1;
+}
+
+.nav-dropdown {
+    position: absolute;
+    z-index: 997;
+    display: flex;
+    column-gap: calc(34em / 25.5);
+    padding: calc(17em / 22.95) 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-dropdown-last {
+    transform: revert;
+    justify-content: flex-end;
+    left: auto;
+    right: 0;
+}
+
+nav:first-of-type>*>*>.nav-dropdown {
+    /* first dropdown */
+    transform: revert;
+    justify-content: flex-start;
+    left: 0;
+}
+
+.nav-dropdown-link {
+    padding: 0;
+}
+
+.menu {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    background-color: var(--carbon);
+    box-shadow: calc(-21rem / 34) 0 1rem rgb(0 0 0 / 0.2);
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* padding-right: calc(55px * 2 * 0.9); */
+}
+
+.menu>.nav-link {
+    margin: 0 calc(55px * 2 * 0.9) 0 calc(55rem / 34);
+    padding-left: calc(8rem / 34);
+    padding-right: 1rem;
+    flex: 1 0 calc(55rem / 34);
+    display: flex;
+    align-items: center;
+}
+
+.menu>.nav-link:hover {
+    background-color: var(--aluminum);
+    border-radius: calc(10.5rem / 34);
+}
+
+.menu>.link-sub {
+    padding-left: 1rem;
+}
+
+@media screen and (max-width: 758.7px) {
+    nav:last-of-type,
+    .hamburger-container {
+        margin-right: 1rem;
+    }
+    .logo-container {
+        margin-left: 1rem;
+    }
+}
